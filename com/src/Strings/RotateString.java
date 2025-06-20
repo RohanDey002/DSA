@@ -11,5 +11,18 @@ public class RotateString {
         String rotated = s+s;
         if(rotated.contains(goal)) return true;
         return false;
+
+
+//                if (s.length() != goal.length()) return false;
+//
+//                for (int i = 0; i < s.length(); i++) {
+//                    String rotated = s.substring(i) + s.substring(0, i);
+//                    if (rotated.equals(goal)) return true;
+//                }
+//
+//                return false;
+
+
+
     }
 }
