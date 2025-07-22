@@ -8,7 +8,7 @@ import java.util.List;
 // Return the result in lexicographically increasing order.
 public class GenerateBinaryStrings {
     public static void main(String[] args) {
-         List<String> result = generateBinaryStrings(4);
+         List<String> result = generateBinaryStrings(3);
          for (String s : result){
              System.out.println(s);
          }
