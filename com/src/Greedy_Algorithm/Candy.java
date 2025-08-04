@@ -7,18 +7,19 @@ public class Candy {
     }
     static int candy(int[] ratings) {
         int n = ratings.length;
-        int candy = n;
+        int candy = 1;
 
         int i = 1;
         while (i < n) {
 
             if (ratings[i] == ratings[i - 1]) {
+                candy+=1;
                 i++;
                 continue;
             }
 
 
-            int peak = 0;
+            int peak = 1;
             while (i < n && ratings[i] > ratings[i - 1]) {
                 peak++;
                 candy += peak;
@@ -26,15 +27,15 @@ public class Candy {
             }
 
 
-            int valley = 0;
+            int valley = 1;
             while (i < n && ratings[i] < ratings[i - 1]) {
-                valley++;
                 candy += valley;
                 i++;
+                valley++;
             }
 
 
-            candy -= Math.min(peak, valley);
+            if(valley>peak) candy+=valley-peak;
         }
 
         return candy;
