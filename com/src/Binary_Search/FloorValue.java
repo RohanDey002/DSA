@@ -3,7 +3,7 @@ package Binary_Search;
 public class FloorValue {
     public static void main(String[] args) {
         int[] arr ={1, 2, 8, 10, 10, 12, 19};
-        System.out.println(findFloor(arr,0));
+        System.out.println(findFloor(arr,9));
 
     }
 

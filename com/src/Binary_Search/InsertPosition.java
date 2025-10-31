@@ -3,7 +3,7 @@ package Binary_Search;
 public class InsertPosition {
     public static void main(String[] args) {
         int[] arr ={1,3,5,6};
-        System.out.println(searchInsert(arr,7));
+        System.out.println(searchInsert(arr,4));
     }
 
     static int searchInsert(int[] nums, int target) {
