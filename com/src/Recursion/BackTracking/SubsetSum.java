@@ -17,10 +17,10 @@ import java.util.Collections;
 
 public class SubsetSum {
     public static void main(String[] args) {
-        int [] arr = {1,2,3};
+        int [] arr = {5,2,1};
         ArrayList<Integer> ans = subsetSum(arr);
         for (int value : ans){
-            System.out.println(value);
+            System.out.print(value+", ");
         }
     }
 

@@ -5,7 +5,8 @@ package Recursion;
 // This problem is solved by binary exponentiation
 public class POW {
     public static void main(String[] args) {
-        System.out.println(pow(2.000,5));
+
+        System.out.println(pow(2.000,-5));
     }
 //Iterative way
 //    static double pow(double x,int n){
@@ -28,22 +29,17 @@ public class POW {
 //    }
 //Recursive way
     static double pow(double x,int n){
-        long temp = n;
-        if(n<0){
-            x=1/x;
-            temp = -temp;
-        }
-        return fastPower(x,temp);
+        return fastPower(x,(long) n);
     }
 
    static double fastPower(double x, long n){
         if (n==0) return  1;
-        double half = fastPower(x,n/2);
-        if (n%2==0) {
-            return half*half;
-        }
-        else{
-            return half*half*x;
+
+        if(n<0) return 1/fastPower(x,-n);
+        if(n%2==0){
+            return fastPower(x*x,n/2);
+        }else {
+            return x*fastPower(x*x,(n-1)/2);
         }
    }
 }
