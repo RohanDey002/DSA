@@ -15,6 +15,10 @@ public class CourseSchedule2 {
                 {3,1},
                 {3,2}
         };
+        int[] result = findOrder(numCourse,preRequisite);
+        for(Integer val: result){
+            System.out.println(val);
+        }
     }
 
     static int[] findOrder(int numCourses, int[][] prerequisites) {

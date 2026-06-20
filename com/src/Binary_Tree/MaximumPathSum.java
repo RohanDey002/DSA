@@ -1,6 +1,7 @@
 package Binary_Tree;
 
 public class MaximumPathSum {
+    static int maxSum;
     public static void main(String[] args) {
         TreeNode root = new TreeNode(5);
         root.left=new TreeNode(3);
@@ -16,18 +17,19 @@ public class MaximumPathSum {
     }
     static int maxPathSum(TreeNode root) {
         if(root==null) return 0;
-        int[] result = {Integer.MIN_VALUE};
+        maxSum = Integer.MIN_VALUE;
 
-        solve(root,result);
-        return result[0];
+        solve(root);
+        return maxSum;
     }
-    static int solve(TreeNode root ,int[] result){
-        if (root==null) return 0;
-        int left = solve(root.left,result);
-        int right = solve(root.right,result);
-        if (left<0) left=0;
-        if(right<0) right=0;
-        result[0] = Math.max(result[0],left+right+root.val );
-        return root.val+Math.max(left,right);
+    static int solve(TreeNode root ){
+        if(root==null) return 0;
+        int left = solve(root.left);
+        int right = solve(root.right);
+        int combineSum = left+right+root.val;
+        int rootwithRightOrLeft = Math.max(left,right)+ root.val;
+        int onlyRoot = root.val;
+        maxSum = Math.max(maxSum, Math.max(combineSum,Math.max(rootwithRightOrLeft,onlyRoot)));
+        return Math.max(rootwithRightOrLeft,onlyRoot);
     }
 }
